@@ -3,9 +3,20 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        -- lua stuff
+        "lua-language-server",
+        "stulua",
+
+        -- C / C++
         "clangd",
-        "eslint-lsp",
-        "python-lsp-server"
+        "clang-format",
+        "cmake-language-server",
+        "cpplint",
+        "cpptools",
+
+        -- python
+        "pyright",
+        "pylint"
       }
     }
   },
@@ -17,30 +28,22 @@ local plugins = {
     end,
   },
   {
-    "rust-lang/rust.vim",
-    ft = "rust",
-    init = function ()
-      vim.g.rustfmt_autosave = 1
-    end
-  },
-  {
     "christoomey/vim-tmux-navigator",
     lazy = false,
   },
   {
-  "neovim/nvim-lspconfig",
-
-   dependencies = {
-     "jose-elias-alvarez/null-ls.nvim",
-      lazy = false,
-     config = function()
-       require "custom.configs.null-ls"
-     end,
+    "neovim/nvim-lspconfig",
+    config = function()
+      require("plugins.configs.lspconfig")
+      require "custom.configs.null-ls"
+end,
    },
-   config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.configs.lspconfig"
-   end,
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    ft="c",
+    opts = function()
+      return require "custom.configs.null-ls"
+    end,
   }
 }
 return plugins
