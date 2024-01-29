@@ -25,6 +25,7 @@ keymap.set("n", "<leader>to", ":tabnew<CR>") -- open a new tab
 keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close a tab
 keymap.set("n", "<leader>tn", ":tabn<CR>") -- next tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") -- previous tab
+vim.keymap.set("n", "<Tab>", vim.cmd.bp) -- cycle through tabs
 
 -- Diff keymaps
 keymap.set("n", "<leader>cc", ":diffput<CR>") -- put diff from current to other during diff
