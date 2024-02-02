@@ -27,7 +27,7 @@ return {
         "bashls", -- requires npm to be installed
         "lua_ls",
         "marksman",
-        "pyright"
+        -- "pyright"
       }
     })
 
