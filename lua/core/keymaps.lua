@@ -8,6 +8,7 @@ keymap.set("n", "<leader>wq", ":wq<CR>", { desc = 'Save and Quit' })       -- sa
 keymap.set("n", "<leader>qq", ":q!<CR>", { desc = 'Quit Without Saving' }) -- quit without saving
 keymap.set("n", "<leader>ww", ":w<CR>", { desc = 'Save' })                 -- save
 keymap.set({ "n", "v" }, "<ESC>", ":noh<CR>", { desc = "Clear Highlights" })
+
 -- Split window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = 'Split Vertically' })               -- split window vertically
 keymap.set("n", "<leader>sh", "<C-w>s", { desc = 'Split Horizontally' })             -- split window horizontally
@@ -18,24 +19,22 @@ keymap.set("n", "<leader>sk", "<C-w>+", { desc = 'Increase Split Height' })     
 keymap.set("n", "<leader>sl", "<C-w>>5", { desc = 'Increase Split Width' })          -- make split windows width bigger
 keymap.set("n", "<leader>sh", "<C-w><5", { desc = 'Decrease Split Width' })          -- make split windows width smaller
 
+-- Vim-maximizer
+keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", { desc = 'Toggle Maximize Tab' }) -- toggle maximize tab
+
 -- Tab management
 keymap.set("n", "<leader>to", ":tabnew<CR>", { desc = 'New Tab' })     -- open a new tab
 keymap.set("n", "<leader>tx", ":tabclose<CR>", { desc = 'Close Tab' }) -- close a tab
+keymap.set("n", "<Tab>", vim.cmd.bp, { desc = 'Next Tab' }) -- cycle through tabs
 -- keymap.set("n", "<leader>tn", ":tabn<CR>", {desc = 'Next Tab'})     -- next tabremap
 -- keymap.set("n", "<leader>tp", ":tabp<CR>", {desc = 'Previous Tab'})     -- previous tab
-vim.keymap.set("n", "<Tab>", vim.cmd.bp, { desc = 'Next Tab' }) -- cycle through tabs
 
 -- Quickfix keymaps
 keymap.set("n", "<leader>qn", ":cnext<CR>", { desc = 'Next Quickfix Item' })     -- jump to next quickfix list item
 keymap.set("n", "<leader>qp", ":cprev<CR>", { desc = 'Previous Quickfix Item' }) -- jump to prev quickfix list item
 
--- Vim-maximizer
-keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", { desc = 'Toggle Maximize Tab' }) -- toggle maximize tab
-
 -- Nvim-tree
 keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", { desc = 'File Explorer' })                     -- toggle file explorer
-keymap.set("n", "<leader>er", ":NvimTreeFocus<CR>", { desc = 'Focus File Explorer' })           -- toggle focus to file explorer
-keymap.set("n", "<leader>ef", ":NvimTreeFindFile<CR>", { desc = 'Find file in file explorer' }) -- find file in file explorer
 
 -- Telescope
 keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = 'Find Files' })
@@ -82,3 +81,13 @@ keymap.set('n', '<leader>gp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { desc 
 keymap.set('n', '<leader>gn', '<cmd>lua vim.diagnostic.goto_next()<CR>', { desc = 'Next Diagnostic' })
 keymap.set('n', '<leader>tr', '<cmd>lua vim.lsp.buf.document_symbol()<CR>', { desc = 'Symbols' })
 keymap.set('i', '<C-Space>', '<cmd>lua vim.lsp.buf.completion()<CR>', { desc = 'Completions' })
+
+local wk = require("which-key")
+wk.register({ f = { name = "Telescope", } }, { prefix = "<leader>" })
+wk.register({ g = { name = "LSP", } }, { prefix = "<leader>" })
+wk.register({ h = { name = "Harpoon", } }, { prefix = "<leader>" })
+wk.register({ s = { name = "Split Window", } }, { prefix = "<leader>" })
+wk.register({ q = { name = "Quit Neovim", } }, { prefix = "<leader>" })
+wk.register({ r = { name = "Rename", } }, { prefix = "<leader>" })
+wk.register({ t = { name = "Tabs", } }, { prefix = "<leader>" })
+wk.register({ w = { name = "Save", } }, { prefix = "<leader>" })
