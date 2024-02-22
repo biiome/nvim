@@ -28,6 +28,9 @@ opt.cursorline = true
 opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
+vim.diagnostic.config {
+  float = { border = "rounded" }, -- add border to diagnostic popups
+}
 
 -- Backspace
 opt.backspace = "indent,eol,start"
@@ -42,15 +45,13 @@ opt.splitbelow = true
 -- Consider - as part of keyword
 opt.iskeyword:append("-")
 
+-- Disable the mouse while in nvim
+-- opt.mouse = ""
+
 -- Folding
 opt.foldlevel = 20
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()" -- Utilize Treesitter folds
 
--- Theming
-if vim.fn.has('termguicolors') then
-  vim.o.termguicolors = true
-end
-
--- Set a transparent background
-vim.cmd('highlight Normal ctermbg=none guibg=none')
+-- For obsidian rendering
+vim.opt_local.conceallevel = 2

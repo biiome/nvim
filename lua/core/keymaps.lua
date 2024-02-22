@@ -4,37 +4,32 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 
 -- General keymaps
-keymap.set("n", "<leader>wq", ":wq<CR>", { desc = 'Save and Quit' })       -- save and quit
-keymap.set("n", "<leader>qq", ":q!<CR>", { desc = 'Quit Without Saving' }) -- quit without saving
-keymap.set("n", "<leader>ww", ":w<CR>", { desc = 'Save' })                 -- save
+keymap.set("n", "<leader>qq", ":wq<CR>") -- quit without saving
+keymap.set("n", "<leader>ww", ":w<CR>") -- save
 keymap.set({ "n", "v" }, "<ESC>", ":noh<CR>", { desc = "Clear Highlights" })
 
 -- Split window management
-keymap.set("n", "<leader>sv", "<C-w>v", { desc = 'Split Vertically' })               -- split window vertically
-keymap.set("n", "<leader>sh", "<C-w>s", { desc = 'Split Horizontally' })             -- split window horizontally
+keymap.set("n", "<leader>s|", "<C-w>v", { desc = 'Split Vertically' }) -- split window vertically
+keymap.set("n", "<leader>s-", "<C-w>s", { desc = 'Split Horizontally' }) -- split window horizontally
 keymap.set("n", "<leader>se", "<C-w>=", { desc = 'Make split windows equal width' }) -- make split windows equal width
-keymap.set("n", "<leader>sx", ":close<CR>", { desc = 'Close Window' })               -- close split window
-keymap.set("n", "<leader>sj", "<C-w>-", { desc = 'Decrease Split Height' })          -- make split window height shorter
-keymap.set("n", "<leader>sk", "<C-w>+", { desc = 'Increase Split Height' })          -- make split windows height taller
-keymap.set("n", "<leader>sl", "<C-w>>5", { desc = 'Increase Split Width' })          -- make split windows width bigger
-keymap.set("n", "<leader>sh", "<C-w><5", { desc = 'Decrease Split Width' })          -- make split windows width smaller
+keymap.set("n", "<leader>sx", ":close<CR>", { desc = 'Close Window' }) -- close split window
+keymap.set("n", "<leader>sj", "<C-w>-", { desc = 'Decrease Split Height' }) -- make split window height shorter
+keymap.set("n", "<leader>sk", "<C-w>+", { desc = 'Increase Split Height' }) -- make split windows height taller
+keymap.set("n", "<leader>sl", "<C-w>>5", { desc = 'Increase Split Width' }) -- make split windows width bigger
+keymap.set("n", "<leader>sh", "<C-w><5", { desc = 'Decrease Split Width' }) -- make split windows width smaller
 
--- Vim-maximizer
+--- Vim-maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", { desc = 'Toggle Maximize Tab' }) -- toggle maximize tab
 
 -- Tab management
-keymap.set("n", "<leader>to", ":tabnew<CR>", { desc = 'New Tab' })     -- open a new tab
-keymap.set("n", "<leader>tx", ":tabclose<CR>", { desc = 'Close Tab' }) -- close a tab
-keymap.set("n", "<Tab>", vim.cmd.bp, { desc = 'Next Tab' }) -- cycle through tabs
--- keymap.set("n", "<leader>tn", ":tabn<CR>", {desc = 'Next Tab'})     -- next tabremap
--- keymap.set("n", "<leader>tp", ":tabp<CR>", {desc = 'Previous Tab'})     -- previous tab
+keymap.set("n", "<Tab>", vim.cmd.bp, { desc = 'Next Tab' }) -- cycle through buffers 
 
 -- Quickfix keymaps
-keymap.set("n", "<leader>qn", ":cnext<CR>", { desc = 'Next Quickfix Item' })     -- jump to next quickfix list item
-keymap.set("n", "<leader>qp", ":cprev<CR>", { desc = 'Previous Quickfix Item' }) -- jump to prev quickfix list item
+keymap.set("n", "<leader>qn", ":cnext<CR>", { desc = 'Next Quickfix Item' })
+keymap.set("n", "<leader>qp", ":cprev<CR>", { desc = 'Previous Quickfix Item' })
 
 -- Nvim-tree
-keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", { desc = 'File Explorer' })                     -- toggle file explorer
+keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", { desc = 'File Explorer' })
 
 -- Telescope
 keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = 'Find Files' })
@@ -49,20 +44,19 @@ keymap.set('n', '<leader>fm',
 )
 
 -- Git-blame
-keymap.set("n", "<leader>gb", ":GitBlameToggle<CR>", { desc = 'Git Blame' }) -- toggle git blame
-
+keymap.set("n", "<leader>gb", ":GitBlameToggle<CR>", { desc = 'Git Blame' })
 -- Harpoon
 keymap.set("n", "<leader>ha", require("harpoon.mark").add_file, { desc = 'Add File' })
 keymap.set("n", "<leader>hh", require("harpoon.ui").toggle_quick_menu, { desc = 'Harpoon Menu' })
-keymap.set("n", "<leader>h1", function() require("harpoon.ui").nav_file(1) end, { desc = 'File 1' })
-keymap.set("n", "<leader>h2", function() require("harpoon.ui").nav_file(2) end, { desc = 'File 2' })
-keymap.set("n", "<leader>h3", function() require("harpoon.ui").nav_file(3) end, { desc = 'File 3' })
-keymap.set("n", "<leader>h4", function() require("harpoon.ui").nav_file(4) end, { desc = 'File 4' })
-keymap.set("n", "<leader>h5", function() require("harpoon.ui").nav_file(5) end, { desc = 'File 5' })
-keymap.set("n", "<leader>h6", function() require("harpoon.ui").nav_file(6) end, { desc = 'File 6' })
-keymap.set("n", "<leader>h7", function() require("harpoon.ui").nav_file(7) end, { desc = 'File 7' })
-keymap.set("n", "<leader>h8", function() require("harpoon.ui").nav_file(8) end, { desc = 'File 8' })
-keymap.set("n", "<leader>h9", function() require("harpoon.ui").nav_file(9) end, { desc = 'File 9' })
+keymap.set("n", "<leader>1", function() require("harpoon.ui").nav_file(1) end, { desc = 'File 1' })
+keymap.set("n", "<leader>2", function() require("harpoon.ui").nav_file(2) end, { desc = 'File 2' })
+keymap.set("n", "<leader>3", function() require("harpoon.ui").nav_file(3) end, { desc = 'File 3' })
+keymap.set("n", "<leader>4", function() require("harpoon.ui").nav_file(4) end, { desc = 'File 4' })
+keymap.set("n", "<leader>5", function() require("harpoon.ui").nav_file(5) end, { desc = 'File 5' })
+keymap.set("n", "<leader>6", function() require("harpoon.ui").nav_file(6) end, { desc = 'File 6' })
+keymap.set("n", "<leader>7", function() require("harpoon.ui").nav_file(7) end, { desc = 'File 7' })
+keymap.set("n", "<leader>8", function() require("harpoon.ui").nav_file(8) end, { desc = 'File 8' })
+keymap.set("n", "<leader>9", function() require("harpoon.ui").nav_file(9) end, { desc = 'File 9' })
 
 -- LSP
 keymap.set('n', '<leader>gg', '<cmd>lua vim.lsp.buf.hover()<CR>', { desc = 'Hover Information' })
@@ -82,12 +76,23 @@ keymap.set('n', '<leader>gn', '<cmd>lua vim.diagnostic.goto_next()<CR>', { desc 
 keymap.set('n', '<leader>tr', '<cmd>lua vim.lsp.buf.document_symbol()<CR>', { desc = 'Symbols' })
 keymap.set('i', '<C-Space>', '<cmd>lua vim.lsp.buf.completion()<CR>', { desc = 'Completions' })
 
-local wk = require("which-key")
-wk.register({ f = { name = "Telescope", } }, { prefix = "<leader>" })
-wk.register({ g = { name = "LSP", } }, { prefix = "<leader>" })
-wk.register({ h = { name = "Harpoon", } }, { prefix = "<leader>" })
-wk.register({ s = { name = "Split Window", } }, { prefix = "<leader>" })
-wk.register({ q = { name = "Quit Neovim", } }, { prefix = "<leader>" })
-wk.register({ r = { name = "Rename", } }, { prefix = "<leader>" })
-wk.register({ t = { name = "Tabs", } }, { prefix = "<leader>" })
-wk.register({ w = { name = "Save", } }, { prefix = "<leader>" })
+-- Debugging
+keymap.set("n", "<leader>bb", "<cmd>lua require'dap'.toggle_breakpoint()<cr>")
+keymap.set("n", "<leader>bc", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>")
+keymap.set("n", "<leader>bl", "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<cr>")
+keymap.set("n", '<leader>br', "<cmd>lua require'dap'.clear_breakpoints()<cr>")
+keymap.set("n", '<leader>ba', '<cmd>Telescope dap list_breakpoints<cr>')
+keymap.set("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>")
+keymap.set("n", "<leader>dj", "<cmd>lua require'dap'.step_over()<cr>")
+keymap.set("n", "<leader>dk", "<cmd>lua require'dap'.step_into()<cr>")
+keymap.set("n", "<leader>do", "<cmd>lua require'dap'.step_out()<cr>")
+keymap.set("n", '<leader>dd', function() require('dap').disconnect(); require('dapui').close(); end)
+keymap.set("n", '<leader>dt', function() require('dap').terminate(); require('dapui').close(); end)
+keymap.set("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>")
+keymap.set("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>")
+keymap.set("n", '<leader>di', function() require "dap.ui.widgets".hover() end)
+keymap.set("n", '<leader>d?', function() local widgets = require "dap.ui.widgets"; widgets.centered_float(widgets.scopes) end)
+keymap.set("n", '<leader>df', '<cmd>Telescope dap frames<cr>')
+keymap.set("n", '<leader>dh', '<cmd>Telescope dap commands<cr>')
+keymap.set("n", '<leader>de', function() require('telescope.builtin').diagnostics({default_text=":E:"}) end)
+
