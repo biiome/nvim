@@ -21,47 +21,47 @@ return {
     local cmp = require("cmp")
 
     local luasnip = require("luasnip")
-    
+
     local icons = {
-      Array         = " ",
-      Boolean       = "󰨙 ",
-      Class         = " ",
-      Codeium       = "󰘦 ",
-      Color         = " ",
-      Control       = " ",
-      Collapsed     = " ",
-      Constant      = "󰏿 ",
-      Constructor   = " ",
-      Copilot       = " ",
-      Enum          = " ",
-      EnumMember    = " ",
-      Event         = " ",
-      Field         = " ",
-      File          = " ",
-      Folder        = " ",
-      Function      = "󰊕 ",
-      Interface     = " ",
-      Key           = " ",
-      Keyword       = " ",
-      Method        = "󰊕 ",
-      Module        = " ",
-      Namespace     = "󰦮 ",
-      Null          = " ",
-      Number        = "󰎠 ",
-      Object        = " ",
-      Operator      = " ",
-      Package       = " ",
-      Property      = " ",
-      Reference     = " ",
-      Snippet       = " ",
-      String        = " ",
-      Struct        = "󰆼 ",
-      TabNine       = "󰏚 ",
-      Text          = " ",
+      Array = " ",
+      Boolean = "󰨙 ",
+      Class = " ",
+      Codeium = "󰘦 ",
+      Color = " ",
+      Control = " ",
+      Collapsed = " ",
+      Constant = "󰏿 ",
+      Constructor = " ",
+      Copilot = " ",
+      Enum = " ",
+      EnumMember = " ",
+      Event = " ",
+      Field = " ",
+      File = " ",
+      Folder = " ",
+      Function = "󰊕 ",
+      Interface = " ",
+      Key = " ",
+      Keyword = " ",
+      Method = "󰊕 ",
+      Module = " ",
+      Namespace = "󰦮 ",
+      Null = " ",
+      Number = "󰎠 ",
+      Object = " ",
+      Operator = " ",
+      Package = " ",
+      Property = " ",
+      Reference = " ",
+      Snippet = " ",
+      String = " ",
+      Struct = "󰆼 ",
+      TabNine = "󰏚 ",
+      Text = " ",
       TypeParameter = " ",
-      Unit          = " ",
-      Value         = " ",
-      Variable      = "󰀫 ",
+      Unit = " ",
+      Value = " ",
+      Variable = "󰀫 ",
     }
 
     -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
@@ -83,7 +83,7 @@ return {
         ["<C-b>"] = cmp.mapping.scroll_docs(-4), -- scroll backward
         ["<C-f>"] = cmp.mapping.scroll_docs(4), -- scroll forward
         ["<C-Space>"] = cmp.mapping.complete({}), -- show completion suggestions
-        ["<C-e>"] = cmp.mapping.abort(), -- close completion window
+        ["<C-e>"] = cmp.mapping.abort(),        -- close completion window
         ["<CR>"] = cmp.mapping.confirm({
           behavior = cmp.ConfirmBehavior.Replace,
           select = true,
@@ -121,13 +121,13 @@ return {
         documentation = cmp.config.window.bordered(),
       },
       formatting = {
-        format = function (_, item)
+        format = function(_, item)
           if icons[item.kind] then
             item.kind = icons[item.kind] .. item.kind
           end
-        return item
+          return item
         end,
-      }
+      },
     })
   end,
 }

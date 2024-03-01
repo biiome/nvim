@@ -54,4 +54,4 @@ opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()" -- Utilize Treesitter folds
 
 -- Limit the maximum number of items to show in the popup menu
-vim.o.pumheight = 10
+vim.o.pumheight = 20

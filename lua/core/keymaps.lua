@@ -4,26 +4,27 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 
 -- General keymaps
-keymap.set("n", "<leader>qq", ":q<CR>") -- quit without saving
-keymap.set("n", "<leader>ww", ":w<CR>") -- save
+keymap.set("n", "<leader>qq", ":q<CR>", { desc = "Quit" })
+keymap.set("n", "<leader>ww", ":w<CR>", { desc = "Save File" })
+keymap.set("n", "<leader>wq", ":wq<CR>", { desc = "Save and Quit" })
 keymap.set({ "n", "v" }, "<ESC>", ":noh<CR>", { desc = "Clear Highlights" })
 keymap.set("i", "jk", "<Esc>", { noremap = true })
 
 -- Split window management
-keymap.set("n", "<leader>s|", "<C-w>v", { desc = "Split Vertically" })               -- split window vertically
-keymap.set("n", "<leader>s-", "<C-w>s", { desc = "Split Horizontally" })             -- split window horizontally
-keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make split windows equal width" }) -- make split windows equal width
-keymap.set("n", "<leader>sx", ":close<CR>", { desc = "Close Window" })               -- close split window
-keymap.set("n", "<leader>sj", "<C-w>-", { desc = "Decrease Split Height" })          -- make split window height shorter
-keymap.set("n", "<leader>sk", "<C-w>+", { desc = "Increase Split Height" })          -- make split windows height taller
-keymap.set("n", "<leader>sl", "<C-w>>5", { desc = "Increase Split Width" })          -- make split windows width bigger
-keymap.set("n", "<leader>sh", "<C-w><5", { desc = "Decrease Split Width" })          -- make split windows width smaller
+keymap.set("n", "<leader>s|", "<C-w>v", { desc = "Split Vertically" })
+keymap.set("n", "<leader>s-", "<C-w>s", { desc = "Split Horizontally" })
+keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make split windows equal width" })
+keymap.set("n", "<leader>sx", ":close<CR>", { desc = "Close Window" })
+keymap.set("n", "<leader>sj", "<C-w>-", { desc = "Decrease Split Height" })
+keymap.set("n", "<leader>sk", "<C-w>+", { desc = "Increase Split Height" })
+keymap.set("n", "<leader>sl", "<C-w>>5", { desc = "Increase Split Width" })
+keymap.set("n", "<leader>sh", "<C-w><5", { desc = "Decrease Split Width" })
 
 --- Vim-maximizer
-keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", { desc = "Toggle Maximize Tab" }) -- toggle maximize tab
+keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", { desc = "Toggle Maximize Tab" })
 
 -- Tab management
-keymap.set("n", "<Tab>", vim.cmd.bp, { desc = "Next Tab" }) -- cycle through buffers
+keymap.set("n", "<Tab>", vim.cmd.bp, { desc = "Next Tab" })
 
 -- Quickfix keymaps
 keymap.set("n", "<leader>qn", ":cnext<CR>", { desc = "Next Quickfix Item" })
