@@ -1,7 +1,7 @@
+local keymap = vim.keymap
+
 -- Set leader key to space
 vim.g.mapleader = " "
-
-local keymap = vim.keymap
 
 -- General keymaps
 keymap.set("n", "<leader>qq", ":q<CR>", { desc = "Quit" })
@@ -41,41 +41,27 @@ keymap.set("n", "<leader>fw", builtin.current_buffer_fuzzy_find, { desc = "Word 
 keymap.set("n", "<leader>fo", builtin.lsp_document_symbols, { desc = "Document Symbols" })
 keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find Help" })
 keymap.set("n", "<leader>fm", function()
-  require("telescope.builtin").treesitter({ default_text = ":method:", desc = "Methods" })
+	require("telescope.builtin").treesitter({ default_text = ":method:", desc = "Methods" })
 end, { desc = "Document Methods" })
 
 -- Git-blame
 keymap.set("n", "<leader>gb", ":GitBlameToggle<CR>", { desc = "Git Blame" })
+
 -- Harpoon
 keymap.set("n", "<leader>ha", require("harpoon.mark").add_file, { desc = "Add File" })
 keymap.set("n", "<leader>hh", require("harpoon.ui").toggle_quick_menu, { desc = "Harpoon Menu" })
-keymap.set("n", "<leader>ha", function()
-  require("harpoon.ui").nav_file(1)
-end, { desc = "File 1" })
 keymap.set("n", "<leader>hs", function()
-  require("harpoon.ui").nav_file(2)
-end, { desc = "File 2" })
+	require("harpoon.ui").nav_file(1)
+end, { desc = "File 1" })
 keymap.set("n", "<leader>hd", function()
-  require("harpoon.ui").nav_file(3)
-end, { desc = "File 3" })
+	require("harpoon.ui").nav_file(2)
+end, { desc = "File 2" })
 keymap.set("n", "<leader>hf", function()
-  require("harpoon.ui").nav_file(4)
-end, { desc = "File 4" })
+	require("harpoon.ui").nav_file(3)
+end, { desc = "File 3" })
 keymap.set("n", "<leader>hg", function()
-  require("harpoon.ui").nav_file(5)
-end, { desc = "File 5" })
-keymap.set("n", "<leader>6", function()
-  require("harpoon.ui").nav_file(6)
-end, { desc = "File 6" })
-keymap.set("n", "<leader>7", function()
-  require("harpoon.ui").nav_file(7)
-end, { desc = "File 7" })
-keymap.set("n", "<leader>8", function()
-  require("harpoon.ui").nav_file(8)
-end, { desc = "File 8" })
-keymap.set("n", "<leader>9", function()
-  require("harpoon.ui").nav_file(9)
-end, { desc = "File 9" })
+	require("harpoon.ui").nav_file(4)
+end, { desc = "File 4" })
 
 -- LSP
 keymap.set("n", "<leader>gg", "<cmd>lua vim.lsp.buf.hover()<CR>", { desc = "Hover Information" })
