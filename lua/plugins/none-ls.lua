@@ -11,7 +11,7 @@ return {
       sources = {
         formatting.stylua,
         formatting.black,
-        diagnostics.flake8,
+        -- diagnostics.flake8,
       },
       on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then
