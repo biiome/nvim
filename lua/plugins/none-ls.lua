@@ -11,7 +11,10 @@ return {
       sources = {
         formatting.stylua,
         formatting.black,
-        -- diagnostics.flake8,
+        formatting.isort,
+        formatting.gofmt,
+        formatting.goimports_reviser,
+        formatting.golines,
       },
       on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then
