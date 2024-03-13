@@ -17,7 +17,7 @@ vim.g.mapleader = " "
 
 -- Initialize lazy with dynamic loading of anything in the plugins directory
 require("lazy").setup("plugins", {
-   change_detection = {
+  change_detection = {
     enabled = true, -- automatically check for config file changes and reload the ui
     notify = false, -- turn off notifications whenever plugin changes are made
   },
@@ -26,3 +26,6 @@ require("lazy").setup("plugins", {
 -- These modules are not loaded by lazy
 require("core.options")
 require("core.keymaps")
+
+-- hide tmux status line
+vim.cmd([[autocmd VimEnter,VimLeave * silent !tmux set status]])
