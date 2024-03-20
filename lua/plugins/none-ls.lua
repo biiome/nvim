@@ -15,6 +15,7 @@ return {
         formatting.gofmt,
         formatting.goimports_reviser,
         formatting.golines,
+        formatting.prettier,
       },
       on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then
