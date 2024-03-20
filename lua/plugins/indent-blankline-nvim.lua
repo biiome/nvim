@@ -1,13 +1,55 @@
--- Indentation guides
+-- -- Indentation guides
+-- return {
+--   -- https://github.com/lukas-reineke/indent-blankline.nvim
+--   "lukas-reineke/indent-blankline.nvim",
+--   event = "VeryLazy",
+--   main = "ibl",
+--   opts = {
+--     enabled = true,
+--     indent = {
+--       char = "▏",
+--     },
+--   },
+-- }
+
 return {
-  -- https://github.com/lukas-reineke/indent-blankline.nvim
-  "lukas-reineke/indent-blankline.nvim",
-  event = "VeryLazy",
-  main = "ibl",
-  opts = {
-    enabled = true,
-    indent = {
-      char = "|",
-    },
-  },
+	"lukas-reineke/indent-blankline.nvim",
+	event = { "BufReadPost", "BufNewFile" },
+	main = "ibl",
+	opts = {
+		exclude = {
+			buftypes = {
+				"nofile",
+				"terminal",
+			},
+			filetypes = {
+				"help",
+				"startify",
+				"aerial",
+				"alpha",
+				"dashboard",
+				"lazy",
+				"neogitstatus",
+				"neo-tree",
+				"Trouble",
+				"dbout",
+				"TelescopePrompt",
+			},
+		},
+		scope = {
+			show_start = false,
+			show_end = false,
+			highlight = { "@keyword" },
+			char = "▏",
+			include = {
+				node_type = {
+					lua = { "table_constructor" },
+				},
+			},
+		},
+		whitespace = {
+			remove_blankline_trail = true,
+		},
+		indent = { char = "▏" },
+	},
 }
