@@ -44,28 +44,28 @@ keymap.set("n", "<leader>fw", builtin.current_buffer_fuzzy_find, { desc = "Word 
 keymap.set("n", "<leader>fo", builtin.lsp_document_symbols, { desc = "Document Symbols" })
 keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find Help" })
 keymap.set("n", "<leader>fm", function()
-	require("telescope.builtin").treesitter({ default_text = ":method:", desc = "Methods" })
+  require("telescope.builtin").treesitter({ default_text = ":method:", desc = "Methods" })
 end, { desc = "Document Methods" })
 
 -- Git-stuff
 keymap.set("n", "<leader>Gp", ":Gitsigns preview_hunk<CR>", { desc = "Preview Hunk" })
--- keymap.set("n", "<leader>G", ":Fugit2<CR>")
-keymap.set("n", "<leader>G", ":Git<CR>")
+keymap.set("n", "<leader>G", ":Fugit2<CR>", { desc = "Open Fugit2" })
+-- keymap.set("n", "<leader>G", ":Git<CR>")
 
 -- Harpoon
 keymap.set("n", "<leader>ha", require("harpoon.mark").add_file, { desc = "Add File" })
 keymap.set("n", "<leader>hh", require("harpoon.ui").toggle_quick_menu, { desc = "Harpoon Menu" })
 keymap.set("n", "<leader>hs", function()
-	require("harpoon.ui").nav_file(1)
+  require("harpoon.ui").nav_file(1)
 end, { desc = "File 1" })
 keymap.set("n", "<leader>hd", function()
-	require("harpoon.ui").nav_file(2)
+  require("harpoon.ui").nav_file(2)
 end, { desc = "File 2" })
 keymap.set("n", "<leader>hf", function()
-	require("harpoon.ui").nav_file(3)
+  require("harpoon.ui").nav_file(3)
 end, { desc = "File 3" })
 keymap.set("n", "<leader>hg", function()
-	require("harpoon.ui").nav_file(4)
+  require("harpoon.ui").nav_file(4)
 end, { desc = "File 4" })
 
 -- LSP
