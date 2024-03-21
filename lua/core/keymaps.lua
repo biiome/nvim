@@ -10,6 +10,8 @@ keymap.set("n", "<leader>wq", ":wq<CR>", { desc = "Save and Quit", silent = true
 keymap.set({ "n", "v" }, "<ESC>", ":noh<CR>", { desc = "Clear Highlights", silent = true })
 keymap.set("i", "jk", "<Esc>", { noremap = true })
 keymap.set("n", "<S-q>", ":bd<CR>", { desc = "Close Buffer", silent = true })
+keymap.set("n", "A", "^i", { desc = "Enter Insert Mode at EOL", noremap = true })
+keymap.set("n", "I", "$a", { desc = "Enter Insert Mode at SOL", noremap = true })
 
 -- Split window management
 keymap.set("n", "<leader>s|", "<C-w>v", { desc = "Split Vertically" })
@@ -45,8 +47,8 @@ keymap.set("n", "<leader>fm", function()
 	require("telescope.builtin").treesitter({ default_text = ":method:", desc = "Methods" })
 end, { desc = "Document Methods" })
 
--- Git-blame
-keymap.set("n", "<leader>gb", ":GitBlameToggle<CR>", { desc = "Git Blame" })
+-- Git-stuff
+keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", { desc = "Preview Hunk" })
 
 -- Harpoon
 keymap.set("n", "<leader>ha", require("harpoon.mark").add_file, { desc = "Add File" })
@@ -77,7 +79,7 @@ keymap.set("n", "<leader>gf", "<cmd>lua vim.lsp.buf.format({async = true})<CR>",
 keymap.set("v", "<leader>gf", "<cmd>lua vim.lsp.buf.format({async = true})<CR>", { desc = "Format" })
 keymap.set("n", "<leader>ga", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Code Actions" })
 keymap.set("n", "<leader>gl", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "Diagnostics" })
-keymap.set("n", "<leader>gp", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { desc = "Prev Disgnostic" })
+-- keymap.set("n", "<leader>gp", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { desc = "Prev Disgnostic" })
 keymap.set("n", "<leader>gn", "<cmd>lua vim.diagnostic.goto_next()<CR>", { desc = "Next Diagnostic" })
 keymap.set("n", "<leader>tr", "<cmd>lua vim.lsp.buf.document_symbol()<CR>", { desc = "Symbols" })
 keymap.set("i", "<C-Space>", "<cmd>lua vim.lsp.buf.completion()<CR>", { desc = "Completions" })
