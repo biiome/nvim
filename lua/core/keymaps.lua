@@ -48,7 +48,9 @@ keymap.set("n", "<leader>fm", function()
 end, { desc = "Document Methods" })
 
 -- Git-stuff
-keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", { desc = "Preview Hunk" })
+keymap.set("n", "<leader>Gp", ":Gitsigns preview_hunk<CR>", { desc = "Preview Hunk" })
+-- keymap.set("n", "<leader>G", ":Fugit2<CR>")
+keymap.set("n", "<leader>G", ":Git<CR>")
 
 -- Harpoon
 keymap.set("n", "<leader>ha", require("harpoon.mark").add_file, { desc = "Add File" })
@@ -79,7 +81,7 @@ keymap.set("n", "<leader>gf", "<cmd>lua vim.lsp.buf.format({async = true})<CR>",
 keymap.set("v", "<leader>gf", "<cmd>lua vim.lsp.buf.format({async = true})<CR>", { desc = "Format" })
 keymap.set("n", "<leader>ga", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Code Actions" })
 keymap.set("n", "<leader>gl", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "Diagnostics" })
--- keymap.set("n", "<leader>gp", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { desc = "Prev Disgnostic" })
+keymap.set("n", "<leader>gp", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { desc = "Prev Disgnostic" })
 keymap.set("n", "<leader>gn", "<cmd>lua vim.diagnostic.goto_next()<CR>", { desc = "Next Diagnostic" })
 keymap.set("n", "<leader>tr", "<cmd>lua vim.lsp.buf.document_symbol()<CR>", { desc = "Symbols" })
 keymap.set("i", "<C-Space>", "<cmd>lua vim.lsp.buf.completion()<CR>", { desc = "Completions" })
