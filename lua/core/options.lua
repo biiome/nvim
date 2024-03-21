@@ -3,9 +3,17 @@ local opt = vim.opt
 -- Session Management
 opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
+-- Set spelllang for Markdown files
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	pattern = { "*.md", "*.txt" },
+	callback = function()
+		vim.opt_local.spelllang = "en_au"
+	end,
+})
+
 -- Line Numbers
-opt.relativenumber = true
-opt.number = true
+-- opt.relativenumber = true
+-- opt.number = true
 
 -- Tabs & Indentation
 opt.tabstop = 2
@@ -29,7 +37,7 @@ opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
 vim.diagnostic.config({
-  float = { border = "rounded" }, -- add border to diagnostic popups
+	float = { border = "rounded" }, -- add border to diagnostic popups
 })
 
 -- Backspace
