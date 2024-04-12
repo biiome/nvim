@@ -14,7 +14,7 @@ keymap.set("n", "A", "^i", { desc = "Enter Insert Mode at EOL", noremap = true }
 keymap.set("n", "I", "$a", { desc = "Enter Insert Mode at SOL", noremap = true })
 
 -- Split window management
-keymap.set("n", "<leader>s|", "<C-w>v", { desc = "Split Vertically" })
+keymap.set("n", "<leader>s/", "<C-w>v", { desc = "Split Vertically" })
 keymap.set("n", "<leader>s-", "<C-w>s", { desc = "Split Horizontally" })
 keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make split windows equal width" })
 keymap.set("n", "<leader>sx", ":close<CR>", { desc = "Close Window" })
@@ -25,6 +25,9 @@ keymap.set("n", "<leader>sh", "<C-w><5", { desc = "Decrease Split Width" })
 
 --- Vim-maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", { desc = "Toggle Maximize Tab" })
+
+-- Code-runner
+keymap.set("n", "<leader>cr", ":RunCode<CR>", { desc = "Quick Code Runner", noremap = true, silent = false })
 
 -- Tab management
 keymap.set("n", "<Tab>", vim.cmd.bp, { desc = "Next Tab" })
@@ -44,7 +47,7 @@ keymap.set("n", "<leader>fw", builtin.current_buffer_fuzzy_find, { desc = "Word 
 keymap.set("n", "<leader>fo", builtin.lsp_document_symbols, { desc = "Document Symbols" })
 keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find Help" })
 keymap.set("n", "<leader>fm", function()
-  require("telescope.builtin").treesitter({ default_text = ":method:", desc = "Methods" })
+	require("telescope.builtin").treesitter({ default_text = ":method:", desc = "Methods" })
 end, { desc = "Document Methods" })
 
 -- Git-stuff
@@ -56,16 +59,16 @@ keymap.set("n", "<leader>G", ":Fugit2<CR>", { desc = "Open Fugit2" })
 keymap.set("n", "<leader>ha", require("harpoon.mark").add_file, { desc = "Add File" })
 keymap.set("n", "<leader>hh", require("harpoon.ui").toggle_quick_menu, { desc = "Harpoon Menu" })
 keymap.set("n", "<leader>hs", function()
-  require("harpoon.ui").nav_file(1)
+	require("harpoon.ui").nav_file(1)
 end, { desc = "File 1" })
 keymap.set("n", "<leader>hd", function()
-  require("harpoon.ui").nav_file(2)
+	require("harpoon.ui").nav_file(2)
 end, { desc = "File 2" })
 keymap.set("n", "<leader>hf", function()
-  require("harpoon.ui").nav_file(3)
+	require("harpoon.ui").nav_file(3)
 end, { desc = "File 3" })
 keymap.set("n", "<leader>hg", function()
-  require("harpoon.ui").nav_file(4)
+	require("harpoon.ui").nav_file(4)
 end, { desc = "File 4" })
 
 -- LSP

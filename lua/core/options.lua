@@ -53,13 +53,12 @@ opt.splitbelow = true
 -- Consider - as part of keyword
 opt.iskeyword:append("-")
 
--- Disable the mouse while in nvim
--- opt.mouse = ""
-
 -- Folding
-opt.foldlevel = 20
-opt.foldmethod = "expr"
-opt.foldexpr = "nvim_treesitter#foldexpr()" -- Utilize Treesitter folds
+opt.foldlevel = 99
+-- opt.statuscolumn = [[%!v:lua.require'lazy'.ui.statuscolumn()]]
+opt.foldtext = "v:lua.require'lazy'.ui.foldexpr()"
+opt.foldmethod = "indent"
+vim.o.formatexpr = "v:lua.require'lazy.util'.format.formatexpr()"
 
 -- Limit the maximum number of items to show in the popup menu
 vim.o.pumheight = 20
