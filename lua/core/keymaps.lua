@@ -7,7 +7,7 @@ vim.g.mapleader = " "
 keymap.set("n", "<leader>qq", ":q<CR>", { desc = "Quit", silent = true })
 keymap.set("n", "<leader>ww", ":w<CR>", { desc = "Save File", silent = true })
 keymap.set("n", "<leader>wq", ":wq<CR>", { desc = "Save and Quit", silent = true })
-keymap.set({ "n", "v" }, "<ESC>", ":noh<CR>", { desc = "Clear Highlights", silent = true })
+keymap.set({ "n" }, "<ESC>", ":noh<CR>", { desc = "Clear Highlights", silent = true })
 keymap.set("i", "jk", "<Esc>", { noremap = true })
 keymap.set("n", "<S-q>", ":bd<CR>", { desc = "Close Buffer", silent = true })
 keymap.set("n", "A", "^i", { desc = "Enter Insert Mode at EOL", noremap = true })
@@ -23,8 +23,10 @@ keymap.set("n", "<leader>sk", "<C-w>+", { desc = "Increase Split Height", silent
 keymap.set("n", "<leader>sl", "<C-w>>5", { desc = "Increase Split Width", silent = true })
 keymap.set("n", "<leader>sh", "<C-w><5", { desc = "Decrease Split Width", silent = true })
 
---- Vim-maximizer
-keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", { desc = "Toggle Maximize Tab" })
+-- Zen Mode
+keymap.set("n", "<leader>Z", ":ZenMode<CR>", { desc = "Toggle Zen Mode", silent = true })
+-- Vim-maximizer
+keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", { desc = "Toggle Maximize Tab", silent = true })
 
 -- Code-runner
 keymap.set("n", "<leader>cr", ":RunCode<CR>", { desc = "Quick Code Runner", noremap = true, silent = false })
