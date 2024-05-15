@@ -25,6 +25,7 @@ keymap.set("n", "<leader>sh", "<C-w><5", { desc = "Decrease Split Width", silent
 
 -- Zen Mode
 keymap.set("n", "<leader>Z", ":ZenMode<CR>", { desc = "Toggle Zen Mode", silent = true })
+
 -- Vim-maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", { desc = "Toggle Maximize Tab", silent = true })
 
@@ -49,28 +50,27 @@ keymap.set("n", "<leader>fw", builtin.current_buffer_fuzzy_find, { desc = "Word 
 keymap.set("n", "<leader>fo", builtin.lsp_document_symbols, { desc = "Document Symbols", silent = true })
 keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find Help", silent = true })
 keymap.set("n", "<leader>fm", function()
-  require("telescope.builtin").treesitter({ default_text = ":method:", desc = "Methods", silent = true })
+	require("telescope.builtin").treesitter({ default_text = ":method:", desc = "Methods", silent = true })
 end, { desc = "Document Methods" })
 
 -- Git-stuff
 keymap.set("n", "<leader>Gp", ":Gitsigns preview_hunk<CR>", { desc = "Preview Hunk", silent = true })
-keymap.set("n", "<leader>G", ":Fugit2<CR>", { desc = "Open Fugit2", silent = true })
--- keymap.set("n", "<leader>G", ":Git<CR>")
+keymap.set("n", "<leader>G", ":LazyGit<CR>", { desc = "open Lazy Git", silent = true })
 
 -- Harpoon
 keymap.set("n", "<leader>ha", require("harpoon.mark").add_file, { desc = "Add File", silent = true })
 keymap.set("n", "<leader>hh", require("harpoon.ui").toggle_quick_menu, { desc = "Harpoon Menu", silent = true })
 keymap.set("n", "<leader>hs", function()
-  require("harpoon.ui").nav_file(1)
+	require("harpoon.ui").nav_file(1)
 end, { desc = "File 1" })
 keymap.set("n", "<leader>hd", function()
-  require("harpoon.ui").nav_file(2)
+	require("harpoon.ui").nav_file(2)
 end, { desc = "File 2" })
 keymap.set("n", "<leader>hf", function()
-  require("harpoon.ui").nav_file(3)
+	require("harpoon.ui").nav_file(3)
 end, { desc = "File 3" })
 keymap.set("n", "<leader>hg", function()
-  require("harpoon.ui").nav_file(4)
+	require("harpoon.ui").nav_file(4)
 end, { desc = "File 4" })
 
 -- LSP
@@ -81,10 +81,10 @@ keymap.set("n", "<leader>gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { des
 keymap.set("n", "<leader>gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", { desc = "Type Definition", silent = true })
 keymap.set("n", "<leader>gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "References", silent = true })
 keymap.set(
-  "n",
-  "<leader>gs",
-  "<cmd>lua vim.lsp.buf.signature_help()<CR>",
-  { desc = "Signature Information", silent = true }
+	"n",
+	"<leader>gs",
+	"<cmd>lua vim.lsp.buf.signature_help()<CR>",
+	{ desc = "Signature Information", silent = true }
 )
 keymap.set("n", "<leader>rm", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Rename Symbol", silent = true })
 keymap.set("n", "<leader>gf", "<cmd>lua vim.lsp.buf.format({async = true})<CR>", { desc = "Format", silent = true })
