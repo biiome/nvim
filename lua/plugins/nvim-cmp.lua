@@ -16,11 +16,16 @@ return {
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-cmdline",
+
+    -- VS-Code like pictograms
+    "onsails/lspkind.nvim",
   },
   config = function()
     local cmp = require("cmp")
 
     local luasnip = require("luasnip")
+
+    local lspkind = require("lspkind")
 
     local icons = {
       Array = " ",
@@ -120,13 +125,21 @@ return {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
       },
+      --    formatting = {
+      -- 	format = function(_, item)
+      -- 		if icons[item.kind] then
+      -- 			item.kind = icons[item.kind] .. item.kind
+      -- 		end
+      -- 		return item
+      -- 	end,
+      -- }
+
+      -- Use lsp-kind icons
       formatting = {
-        format = function(_, item)
-          if icons[item.kind] then
-            item.kind = icons[item.kind] .. item.kind
-          end
-          return item
-        end,
+        format = lspkind.cmp_format({
+          maxwidth = 50,
+          elipsis_char = "...",
+        }),
       },
     })
   end,
