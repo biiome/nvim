@@ -12,8 +12,8 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 })
 
 -- Line Numbers
--- opt.relativenumber = true
--- opt.number = true
+opt.relativenumber = true
+opt.number = true
 
 -- Tabs & Indentation
 opt.tabstop = 2
@@ -44,7 +44,7 @@ vim.diagnostic.config({
 opt.backspace = "indent,eol,start"
 
 -- Clipboard
-opt.clipboard:append("unnamedplus")
+opt.clipboard:append("unnamedplus") -- use system slipboard as default clipboard
 
 -- Split Windows
 opt.splitright = true
@@ -62,3 +62,6 @@ vim.o.formatexpr = "v:lua.require'lazy.util'.format.formatexpr()"
 
 -- Limit the maximum number of items to show in the popup menu
 vim.o.pumheight = 20
+
+-- Turn off swapfile
+opt.swapfile = false
