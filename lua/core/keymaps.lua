@@ -87,8 +87,8 @@ keymap.set(
 	{ desc = "Signature Information", silent = true }
 )
 keymap.set("n", "<leader>rm", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Rename Symbol", silent = true })
-keymap.set("n", "<leader>gf", "<cmd>lua vim.lsp.buf.format({async = true})<CR>", { desc = "Format", silent = true })
-keymap.set("v", "<leader>gf", "<cmd>lua vim.lsp.buf.format({async = true})<CR>", { desc = "Format", silent = true })
+-- keymap.set("n", "<leader>gf", "<cmd>lua vim.lsp.buf.format({async = true})<CR>", { desc = "Format", silent = true })
+-- keymap.set("v", "<leader>gf", "<cmd>lua vim.lsp.buf.format({async = true})<CR>", { desc = "Format", silent = true })
 keymap.set("n", "<leader>ga", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Code Actions", silent = true })
 keymap.set("n", "<leader>gl", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "Diagnostics", silent = true })
 keymap.set("n", "<leader>gp", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { desc = "Prev Disgnostic", silent = true })
