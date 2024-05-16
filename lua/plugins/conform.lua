@@ -8,7 +8,7 @@ return {
 			formatters_by_ft = {
 				markdown = { "prettier" },
 				lua = { "stylua" },
-				python = { "isort", "black" },
+				python = { "isort", "autopep8" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
@@ -23,6 +23,6 @@ return {
 				async = false,
 				timeout_ms = 1000,
 			})
-		end, { desc = "Format file or range" })
+		end, { desc = "Format" })
 	end,
 }
