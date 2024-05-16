@@ -29,7 +29,6 @@ return {
 			ensure_installed = {
 				"lua_ls",
 				"pyright",
-				"gopls",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed
@@ -40,8 +39,9 @@ return {
 				"prettier", -- prettier formatter
 				"stylua", -- lua formatter
 				"isort", -- python formatter
-				"black", -- python formatter
-				"pylint", -- python linter
+				"autopep8", -- python formatter
+				-- "pylint", -- python linter
+				"flake8", -- python linter
 			},
 		})
 	end,
