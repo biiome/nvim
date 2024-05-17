@@ -39,7 +39,7 @@ return {
 				"prettier", -- prettier formatter
 				"stylua", -- lua formatter
 				"isort", -- python formatter
-				"autopep8", -- python formatter
+				"black", -- python formatter
 				-- "pylint", -- python linter
 				"flake8", -- python linter
 			},
