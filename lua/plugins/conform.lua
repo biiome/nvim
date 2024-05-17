@@ -8,12 +8,17 @@ return {
 			formatters_by_ft = {
 				markdown = { "prettier" },
 				lua = { "stylua" },
-				python = { "isort", "autopep8" },
+				python = { "isort", "black" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
 				async = false,
 				timeout_ms = 1000,
+			},
+			formatters = {
+				black = {
+					prepend_args = { "--line-length", "88" },
+				},
 			},
 		})
 
