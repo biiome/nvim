@@ -76,7 +76,7 @@ return {
 							disableOrganizeImports = false,
 							reportedLineLength = {
 								enabled = true,
-								value = 88,
+								-- value = 88,
 							},
 						},
 						python = {
