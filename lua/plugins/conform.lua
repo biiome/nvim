@@ -9,6 +9,7 @@ return {
 				markdown = { "prettier" },
 				lua = { "stylua" },
 				python = { "isort", "black" },
+				-- python = { "isort", "ruff" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
@@ -19,6 +20,9 @@ return {
 				black = {
 					prepend_args = { "--line-length", "88" },
 				},
+				-- ruff = {
+				-- 	command = "ruff",
+				-- },
 			},
 		})
 

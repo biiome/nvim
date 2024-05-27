@@ -28,10 +28,11 @@ return {
 			-- list of servers for mason to install
 			ensure_installed = {
 				"lua_ls",
+				-- "ruff",
 				"pyright",
 			},
 			-- auto-install configured servers (with lspconfig)
-			automatic_installation = true, -- not the same as ensure_installed
+			automatic_installation = true,
 		})
 
 		mason_tool_installer.setup({
@@ -40,8 +41,6 @@ return {
 				"stylua", -- lua formatter
 				"isort", -- python formatter
 				"black", -- python formatter
-				-- "pylint", -- python linter
-				"flake8", -- python linter
 			},
 		})
 	end,

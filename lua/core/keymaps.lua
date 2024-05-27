@@ -55,7 +55,7 @@ end, { desc = "Document Methods" })
 
 -- Git-stuff
 keymap.set("n", "<leader>Gp", ":Gitsigns preview_hunk<CR>", { desc = "Preview Hunk", silent = true })
-keymap.set("n", "<leader>G", ":LazyGit<CR>", { desc = "open Lazy Git", silent = true })
+keymap.set("n", "<leader>Gg", ":LazyGit<CR>", { desc = "open Lazy Git", silent = true })
 
 -- Harpoon
 keymap.set("n", "<leader>ha", require("harpoon.mark").add_file, { desc = "Add File", silent = true })
