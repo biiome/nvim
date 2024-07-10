@@ -10,6 +10,8 @@ return {
 				lua = { "stylua" },
 				python = { "isort", "black" },
 				c = { "clangd" },
+				go = { "goimports", "gofmt" },
+				json = { "jq" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
@@ -20,9 +22,6 @@ return {
 				black = {
 					prepend_args = { "--line-length", "88" },
 				},
-				-- ruff = {
-				-- 	command = "ruff",
-				-- },
 			},
 		})
 
