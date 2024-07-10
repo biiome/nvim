@@ -9,7 +9,7 @@ return {
 				markdown = { "prettier" },
 				lua = { "stylua" },
 				python = { "isort", "black" },
-				-- python = { "isort", "ruff" },
+				c = { "clangd" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
