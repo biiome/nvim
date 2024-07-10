@@ -28,8 +28,8 @@ return {
 			-- list of servers for mason to install
 			ensure_installed = {
 				"lua_ls",
-				-- "ruff",
 				"pyright",
+				"gopls",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true,
