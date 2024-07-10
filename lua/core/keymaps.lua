@@ -23,6 +23,20 @@ keymap.set("n", "<leader>sk", "<C-w>+", { desc = "Increase Split Height", silent
 keymap.set("n", "<leader>sl", "<C-w>>5", { desc = "Increase Split Width", silent = true })
 keymap.set("n", "<leader>sh", "<C-w><5", { desc = "Decrease Split Width", silent = true })
 
+-- Floating terminal
+keymap.set(
+	"n",
+	"<leader>ft",
+	'<CMD>lua require("FTerm").toggle()<CR>',
+	{ desc = "Toggle Floating Term", silent = true }
+)
+keymap.set(
+	"t",
+	"<leader>ft",
+	'<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>',
+	{ desc = "Decrease Split Width", silent = true }
+)
+
 -- Zen Mode
 keymap.set("n", "<leader>Z", ":ZenMode<CR>", { desc = "Toggle Zen Mode", silent = true })
 
