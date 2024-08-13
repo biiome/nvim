@@ -20,7 +20,7 @@ return {
 			},
 			formatters = {
 				black = {
-					prepend_args = { "--line-length", "88" },
+					prepend_args = { "--line-length", "80" },
 				},
 			},
 		})
