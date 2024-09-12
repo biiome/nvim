@@ -4,6 +4,5 @@ return {
     "MunifTanjim/nui.nvim",
   },
   event = "VeryLazy",
-  opts = {
-  }
+  opts = {},
 }

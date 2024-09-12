@@ -5,10 +5,10 @@ opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,te
 
 -- Set spelllang for Markdown files
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-	pattern = { "*.md", "*.txt" },
-	callback = function()
-		vim.opt_local.spelllang = "en_au"
-	end,
+  pattern = { "*.md", "*.txt" },
+  callback = function()
+    vim.opt_local.spelllang = "en_au"
+  end,
 })
 
 -- Line Numbers
@@ -36,22 +36,22 @@ opt.cursorline = true
 opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
-vim.diagnostic.config({
-	float = { border = "rounded" }, -- add border to diagnostic popups
-})
+vim.diagnostic.config {
+  float = { border = "rounded" }, -- add border to diagnostic popups
+}
 
 -- Backspace
 opt.backspace = "indent,eol,start"
 
 -- Clipboard
-opt.clipboard:append("unnamedplus") -- use system slipboard as default clipboard
+opt.clipboard:append "unnamedplus" -- use system slipboard as default clipboard
 
 -- Split Windows
 opt.splitright = true
 opt.splitbelow = true
 
 -- Consider - as part of keyword
-opt.iskeyword:append("-")
+opt.iskeyword:append "-"
 
 -- Folding
 opt.foldlevel = 99
