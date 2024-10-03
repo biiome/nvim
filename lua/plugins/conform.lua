@@ -1,36 +1,35 @@
 return {
-	"stevearc/conform.nvim",
-	event = { "BufReadPre", "BufNewFile" },
-	config = function()
-		local conform = require("conform")
+  "stevearc/conform.nvim",
+  event = { "BufReadPre", "BufNewFile" },
+  config = function()
+    local conform = require "conform"
 
-		conform.setup({
-			formatters_by_ft = {
-				markdown = { "prettier" },
-				lua = { "stylua" },
-				python = { "isort", "black" },
-				c = { "clangd" },
-				go = { "goimports", "gofmt" },
-				json = { "jq" },
-			},
-			format_on_save = {
-				lsp_fallback = true,
-				async = false,
-				timeout_ms = 1000,
-			},
-			formatters = {
-				black = {
-					prepend_args = { "--line-length", "80" },
-				},
-			},
-		})
+    conform.setup {
+      formatters_by_ft = {
+        markdown = { "prettier" },
+        lua = { "stylua" },
+        python = { "isort", "black" },
+        c = { "clangd" },
+        json = { "jq" },
+      },
+      format_on_save = {
+        lsp_fallback = true,
+        async = false,
+        timeout_ms = 1000,
+      },
+      formatters = {
+        black = {
+          prepend_args = { "--line-length", "100" },
+        },
+      },
+    }
 
-		vim.keymap.set({ "n", "v" }, "<leader>gf", function()
-			conform.format({
-				lsp_fallback = true,
-				async = false,
-				timeout_ms = 1000,
-			})
-		end, { desc = "Format" })
-	end,
+    vim.keymap.set({ "n", "v" }, "<leader>gf", function()
+      conform.format {
+        lsp_fallback = true,
+        async = false,
+        timeout_ms = 1000,
+      }
+    end, { desc = "Format" })
+  end,
 }
