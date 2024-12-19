@@ -28,7 +28,9 @@ return {
       -- list of servers for mason to install
       ensure_installed = {
         "lua_ls",
-        "pyright",
+        -- "pyright",
+        "basedpyright",
+        "ruff",
       },
       -- auto-install configured servers (with lspconfig)
       automatic_installation = true,
@@ -38,8 +40,8 @@ return {
       ensure_installed = {
         "prettier", -- prettier formatter
         "stylua", -- lua formatter
-        "isort", -- python formatter
-        "black", -- python formatter
+        -- "isort", -- python formatter
+        -- "black", -- python formatter
       },
     }
   end,

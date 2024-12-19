@@ -66,12 +66,27 @@ return {
           },
         }
       end,
-      ["pyright"] = function()
+      ["ruff"] = function()
+        lspconfig["ruff"].setup {
+          capabilities = capabilities,
+          init_options = {
+            settings = {
+              -- configuration = "~/dev/ruff/ruff.toml",
+              lineLength = 100,
+              organizeImports = true,
+            },
+          },
+        }
+      end,
+      ["basedpyright"] = function()
         -- configure python server (with special settings)
-        lspconfig["pyright"].setup {
+        lspconfig["basedpyright"].setup {
           capabilities = capabilities,
           settings = {
-            pyright = {
+            basedpyright = {
+              analysis = {
+                ignore = { "*" },
+              },
               disableLanguageServices = false,
               disableOrganizeImports = false,
               reportedLineLength = {
@@ -81,11 +96,12 @@ return {
             },
             python = {
               analysis = {
-                autoImportCompletions = false,
-                autoSearchPaths = true,
-                diagnosticMode = "workspace", -- openFilesOnly, workspace
-                typeCheckingMode = "basic", -- off, basic, strict
-                useLibraryCodeForTypes = true,
+                ignore = { "*" }, -- Ignore all files for analysis. Use ruff instead.
+                -- autoImportCompletions = true,
+                -- autoSearchPaths = true,
+                -- diagnosticMode = "workspace", -- openFilesOnly, workspace
+                -- typeCheckingMode = "basic", -- off, basic, strict
+                -- useLibraryCodeForTypes = true,
               },
             },
           },

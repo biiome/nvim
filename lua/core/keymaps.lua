@@ -41,10 +41,20 @@ keymap.set(
 keymap.set("n", "<leader>Z", ":ZenMode<CR>", { desc = "Toggle Zen Mode", silent = true })
 
 -- Vim-maximizer
-keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", { desc = "Toggle Maximize Tab", silent = true })
+keymap.set(
+  "n",
+  "<leader>sm",
+  ":MaximizerToggle<CR>",
+  { desc = "Toggle Maximize Tab", silent = true }
+)
 
 -- Code-runner
-keymap.set("n", "<leader>cr", ":RunCode<CR>", { desc = "Quick Code Runner", noremap = true, silent = false })
+keymap.set(
+  "n",
+  "<leader>cr",
+  ":RunCode<CR>",
+  { desc = "Quick Code Runner", noremap = true, silent = false }
+)
 
 -- Tab management
 keymap.set("n", "<Tab>", vim.cmd.bp, { desc = "Next Tab" })
@@ -60,20 +70,50 @@ keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", { desc = "File Explorer", silent
 local builtin = require "telescope.builtin"
 keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find Files", silent = true })
 keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Live Grep", silent = true })
-keymap.set("n", "<leader>fw", builtin.current_buffer_fuzzy_find, { desc = "Word Search", silent = true })
-keymap.set("n", "<leader>fo", builtin.lsp_document_symbols, { desc = "Document Symbols", silent = true })
+keymap.set(
+  "n",
+  "<leader>fw",
+  builtin.current_buffer_fuzzy_find,
+  { desc = "Word Search", silent = true }
+)
+keymap.set(
+  "n",
+  "<leader>fo",
+  builtin.lsp_document_symbols,
+  { desc = "Document Symbols", silent = true }
+)
 keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find Help", silent = true })
 keymap.set("n", "<leader>fm", function()
-  require("telescope.builtin").treesitter { default_text = ":method:", desc = "Methods", silent = true }
+  require("telescope.builtin").treesitter {
+    default_text = ":method:",
+    desc = "Methods",
+    silent = true,
+  }
 end, { desc = "Document Methods" })
+keymap.set("n", "<leader>fb", builtin.buffers, { desc = "List open buffers", silent = true })
 
 -- Git-stuff
-keymap.set("n", "<leader>Gp", ":Gitsigns preview_hunk<CR>", { desc = "Preview Hunk", silent = true })
+keymap.set(
+  "n",
+  "<leader>Gp",
+  ":Gitsigns preview_hunk<CR>",
+  { desc = "Preview Hunk", silent = true }
+)
 keymap.set("n", "<leader>Gg", ":LazyGit<CR>", { desc = "open Lazy Git", silent = true })
 
 -- Harpoon
-keymap.set("n", "<leader>ha", require("harpoon.mark").add_file, { desc = "Add File", silent = true })
-keymap.set("n", "<leader>hh", require("harpoon.ui").toggle_quick_menu, { desc = "Harpoon Menu", silent = true })
+keymap.set(
+  "n",
+  "<leader>ha",
+  require("harpoon.mark").add_file,
+  { desc = "Add File", silent = true }
+)
+keymap.set(
+  "n",
+  "<leader>hh",
+  require("harpoon.ui").toggle_quick_menu,
+  { desc = "Harpoon Menu", silent = true }
+)
 keymap.set("n", "<leader>hs", function()
   require("harpoon.ui").nav_file(1)
 end, { desc = "File 1" })
@@ -88,22 +128,87 @@ keymap.set("n", "<leader>hg", function()
 end, { desc = "File 4" })
 
 -- LSP
-keymap.set("n", "<leader>gg", "<cmd>lua vim.lsp.buf.hover()<CR>", { desc = "Hover Information", silent = true })
-keymap.set("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Definition", silent = true })
-keymap.set("n", "<leader>gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { desc = "Declaration", silent = true })
-keymap.set("n", "<leader>gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { desc = "Implementations", silent = true })
-keymap.set("n", "<leader>gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", { desc = "Type Definition", silent = true })
-keymap.set("n", "<leader>gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "References", silent = true })
+keymap.set(
+  "n",
+  "<leader>gg",
+  "<cmd>lua vim.lsp.buf.hover()<CR>",
+  { desc = "Hover Information", silent = true }
+)
+keymap.set(
+  "n",
+  "<leader>gd",
+  "<cmd>lua vim.lsp.buf.definition()<CR>",
+  { desc = "Definition", silent = true }
+)
+keymap.set(
+  "n",
+  "<leader>gD",
+  "<cmd>lua vim.lsp.buf.declaration()<CR>",
+  { desc = "Declaration", silent = true }
+)
+keymap.set(
+  "n",
+  "<leader>gi",
+  "<cmd>lua vim.lsp.buf.implementation()<CR>",
+  { desc = "Implementations", silent = true }
+)
+keymap.set(
+  "n",
+  "<leader>gt",
+  "<cmd>lua vim.lsp.buf.type_definition()<CR>",
+  { desc = "Type Definition", silent = true }
+)
+keymap.set(
+  "n",
+  "<leader>gr",
+  "<cmd>lua vim.lsp.buf.references()<CR>",
+  { desc = "References", silent = true }
+)
 keymap.set(
   "n",
   "<leader>gs",
   "<cmd>lua vim.lsp.buf.signature_help()<CR>",
   { desc = "Signature Information", silent = true }
 )
-keymap.set("n", "<leader>rm", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Rename Symbol", silent = true })
-keymap.set("n", "<leader>ga", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Code Actions", silent = true })
-keymap.set("n", "<leader>gl", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "Diagnostics", silent = true })
-keymap.set("n", "<leader>gp", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { desc = "Prev Disgnostic", silent = true })
-keymap.set("n", "<leader>gn", "<cmd>lua vim.diagnostic.goto_next()<CR>", { desc = "Next Diagnostic", silent = true })
-keymap.set("n", "<leader>tr", "<cmd>lua vim.lsp.buf.document_symbol()<CR>", { desc = "Symbols", silent = true })
-keymap.set("i", "<C-Space>", "<cmd>lua vim.lsp.buf.completion()<CR>", { desc = "Completions", silent = true })
+keymap.set(
+  "n",
+  "<leader>rm",
+  "<cmd>lua vim.lsp.buf.rename()<CR>",
+  { desc = "Rename Symbol", silent = true }
+)
+keymap.set(
+  "n",
+  "<leader>ga",
+  "<cmd>lua vim.lsp.buf.code_action()<CR>",
+  { desc = "Code Actions", silent = true }
+)
+keymap.set(
+  "n",
+  "<leader>gl",
+  "<cmd>lua vim.diagnostic.open_float()<CR>",
+  { desc = "Diagnostics", silent = true }
+)
+keymap.set(
+  "n",
+  "<leader>gp",
+  "<cmd>lua vim.diagnostic.goto_prev()<CR>",
+  { desc = "Prev Disgnostic", silent = true }
+)
+keymap.set(
+  "n",
+  "<leader>gn",
+  "<cmd>lua vim.diagnostic.goto_next()<CR>",
+  { desc = "Next Diagnostic", silent = true }
+)
+keymap.set(
+  "n",
+  "<leader>tr",
+  "<cmd>lua vim.lsp.buf.document_symbol()<CR>",
+  { desc = "Symbols", silent = true }
+)
+keymap.set(
+  "i",
+  "<C-Space>",
+  "<cmd>lua vim.lsp.buf.completion()<CR>",
+  { desc = "Completions", silent = true }
+)
