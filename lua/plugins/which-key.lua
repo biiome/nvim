@@ -7,8 +7,20 @@ return {
     vim.o.timeoutlen = 300
   end,
   opts = {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
-  }
+    preset = "helix",
+    spec = {
+      {
+        mode = { "n", "v" },
+        { "<leader>c", group = "code" },
+        { "<leader>f", group = "file/find" },
+        { "<leader>g", group = "lsp" },
+        { "<leader>q", group = "quit session" },
+        { "<leader>s", group = "split window" },
+        { "<leader>w", group = "save session" },
+        { "<leader>G", group = "git" },
+        { "<leader>h", group = "harpoon" },
+        { "<leader>n", group = "notifications" },
+      },
+    },
+  },
 }
