@@ -27,5 +27,24 @@ require("lazy").setup("plugins", {
 require "core.options"
 require "core.keymaps"
 
--- hide tmux status line
-vim.cmd [[autocmd VimEnter,VimLeave * silent !tmux set status]]
+-- -- hide tmux status line
+-- local function nvim_instance_count()
+--   local handle = io.popen "pgrep -xc nvim"
+--   local result = handle:read "*a"
+--   handle:close()
+--   return tonumber(result) or 0
+-- end
+--
+-- vim.api.nvim_create_autocmd("VimEnter", {
+--   callback = function()
+--     vim.cmd "silent !tmux set status off"
+--   end,
+-- })
+--
+-- vim.api.nvim_create_autocmd("VimLeave", {
+--   callback = function()
+--     if nvim_instance_count() <= 2 then
+--       vim.cmd "silent !tmux set status on"
+--     end
+--   end,
+-- })
