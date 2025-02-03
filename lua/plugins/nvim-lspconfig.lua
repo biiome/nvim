@@ -4,7 +4,7 @@ return {
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
-    { "folke/neodev.nvim", opts = {} },
+    -- { "folke/neodev.nvim", opts = {} },
   },
   config = function()
     -- import lspconfig plugin
@@ -79,29 +79,13 @@ return {
         }
       end,
       ["basedpyright"] = function()
-        -- configure python server (with special settings)
-        lspconfig["basedpyright"].setup {
-          capabilities = capabilities,
+        lspconfig.basedpyright.setup {
           settings = {
             basedpyright = {
-              analysis = {
-                ignore = { "*" },
-              },
-              disableLanguageServices = false,
               disableOrganizeImports = false,
-              reportedLineLength = {
-                enabled = true,
-                -- value = 88,
-              },
-            },
-            python = {
               analysis = {
-                ignore = { "*" }, -- Ignore all files for analysis. Use ruff instead.
-                -- autoImportCompletions = true,
-                -- autoSearchPaths = true,
-                -- diagnosticMode = "workspace", -- openFilesOnly, workspace
-                -- typeCheckingMode = "basic", -- off, basic, strict
-                -- useLibraryCodeForTypes = true,
+                -- Disable type checking
+                typeCheckingMode = "off",
               },
             },
           },
