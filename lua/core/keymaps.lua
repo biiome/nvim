@@ -5,6 +5,7 @@ vim.g.mapleader = " "
 
 -- General keymaps
 keymap.set("n", "<leader>qq", ":q<CR>", { desc = "Quit", silent = true })
+keymap.set("n", "<leader>qQ", ":q!<CR>", { desc = "Quit", silent = true })
 keymap.set("n", "<leader>ww", ":w<CR>", { desc = "Save File", silent = true })
 keymap.set("n", "<leader>wq", ":wq<CR>", { desc = "Save and Quit", silent = true })
 keymap.set({ "n" }, "<ESC>", ":noh<CR>", { desc = "Clear Highlights", silent = true })
@@ -26,13 +27,13 @@ keymap.set("n", "<leader>sh", "<C-w><5", { desc = "Decrease Split Width", silent
 -- Floating terminal
 keymap.set(
   "n",
-  "<leader>ft",
+  "<leader>tt",
   '<CMD>lua require("FTerm").toggle()<CR>',
   { desc = "Toggle Floating Term", silent = true }
 )
 keymap.set(
   "t",
-  "<leader>ft",
+  "<leader>tt",
   '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>',
   { desc = "Decrease Split Width", silent = true }
 )
