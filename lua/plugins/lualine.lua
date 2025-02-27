@@ -1,4 +1,5 @@
 local colors = require "oldworld.palette"
+-- local colors.bg_dark = nil
 vim.o.laststatus = vim.g.lualine_laststatus
 local modecolor = {
   n = colors.red,
@@ -23,11 +24,13 @@ local modecolor = {
   t = colors.bright_red,
 }
 
+local bg_dark = nil
+
 local theme = {
   normal = {
     a = { fg = colors.bg_dark, bg = colors.blue },
     b = { fg = colors.blue, bg = colors.white },
-    c = { fg = colors.white, bg = colors.bg_dark },
+    c = { fg = colors.white, bg = bg_dark },
     z = { fg = colors.white, bg = colors.bg_dark },
   },
   insert = { a = { fg = colors.bg_dark, bg = colors.orange } },

@@ -27,7 +27,7 @@ require("lazy").setup("plugins", {
 require "core.options"
 require "core.keymaps"
 
--- -- hide tmux status line
+-- hide tmux status line
 -- local function nvim_instance_count()
 --   local handle = io.popen "pgrep -xc nvim"
 --   local result = handle:read "*a"

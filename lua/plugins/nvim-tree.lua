@@ -7,7 +7,10 @@ return {
     "nvim-tree/nvim-web-devicons", -- Fancy icon support
   },
   opts = {
+    filters = { dotfiles = false },
     view = {
+      width = 30,
+      preserve_window_proportions = true,
       side = "left",
     },
     actions = {

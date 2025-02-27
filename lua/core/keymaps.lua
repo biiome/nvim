@@ -100,7 +100,6 @@ keymap.set(
   ":Gitsigns preview_hunk<CR>",
   { desc = "Preview Hunk", silent = true }
 )
-keymap.set("n", "<leader>Gg", ":LazyGit<CR>", { desc = "open Lazy Git", silent = true })
 
 -- Harpoon
 keymap.set(

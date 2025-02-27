@@ -65,3 +65,6 @@ vim.o.pumheight = 20
 
 -- Turn off swapfile
 opt.swapfile = false
+
+-- Minimal number of screen lines to keep above and below cursor
+vim.opt.scrolloff = 10
