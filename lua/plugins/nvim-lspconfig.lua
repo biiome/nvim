@@ -80,6 +80,24 @@ return {
           },
         }
       end,
+      ["pylsp"] = function()
+        lspconfig["pylsp"].setup {
+          settings = {
+            pylsp = {
+              plugins = {
+                pyflakes = { enabled = false },
+                pycodestyle = { enabled = false },
+                autopep8 = { enabled = false },
+                yapf = { enabled = false },
+                mccabe = { enabled = false },
+                pylsp_mylsp = { enabled = false },
+                pylsp_black = { enabled = false },
+                pylsp_isort = { enabled = false },
+              },
+            },
+          },
+        }
+      end,
       ["ruff"] = function()
         lspconfig["ruff"].setup {
           capabilities = capabilities,
@@ -92,25 +110,25 @@ return {
           },
         }
       end,
-      ["basedpyright"] = function()
-        lspconfig.basedpyright.setup {
-          settings = {
-            basedpyright = {
-              disableOrganizeImports = true,
-              analysis = {
-                -- Disable type checking
-                ignore = { "*" },
-                typeCheckingMode = "off",
-              },
-            },
-          },
-          python = {
-            analysis = {
-              ignore = { "*" },
-            },
-          },
-        }
-      end,
+      -- ["basedpyright"] = function()
+      --   lspconfig.basedpyright.setup {
+      --     settings = {
+      --       basedpyright = {
+      --         disableOrganizeImports = true,
+      --         analysis = {
+      --           -- Disable type checking
+      --           ignore = { "*" },
+      --           typeCheckingMode = "off",
+      --         },
+      --       },
+      --     },
+      --     python = {
+      --       analysis = {
+      --         ignore = { "*" },
+      --       },
+      --     },
+      --   }
+      -- end,
     }
   end,
 }

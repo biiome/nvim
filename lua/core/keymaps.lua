@@ -101,32 +101,6 @@ keymap.set(
   { desc = "Preview Hunk", silent = true }
 )
 
--- Harpoon
-keymap.set(
-  "n",
-  "<leader>ha",
-  require("harpoon.mark").add_file,
-  { desc = "Add File", silent = true }
-)
-keymap.set(
-  "n",
-  "<leader>hh",
-  require("harpoon.ui").toggle_quick_menu,
-  { desc = "Harpoon Menu", silent = true }
-)
-keymap.set("n", "<leader>hs", function()
-  require("harpoon.ui").nav_file(1)
-end, { desc = "File 1" })
-keymap.set("n", "<leader>hd", function()
-  require("harpoon.ui").nav_file(2)
-end, { desc = "File 2" })
-keymap.set("n", "<leader>hf", function()
-  require("harpoon.ui").nav_file(3)
-end, { desc = "File 3" })
-keymap.set("n", "<leader>hg", function()
-  require("harpoon.ui").nav_file(4)
-end, { desc = "File 4" })
-
 -- LSP
 keymap.set(
   "n",

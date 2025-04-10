@@ -85,10 +85,18 @@ return {
       },
       -- Use lsp-kind icons
       formatting = {
+        -- Define the fields to display and their order
+        -- Common choices: 'kind' (icon/text), 'abbr' (abbreviation), 'menu' (source info)
+        fields = { "kind", "abbr", "menu" },
+
+        -- Add the indicator for expandable items (like snippets)
+        expandable_indicator = ">", -- This was correct
+
+        -- Define the main formatting function using lspkind
         format = lspkind.cmp_format {
-          maxwidth = 50,
-          elipsis_char = "...",
-        },
+          mode = "symbol_text", -- Show symbol and text, popular choice
+          maxwidth = 50, -- Keep your maxwidth setting
+          ellipsis_char = "...", -- Keep your ellipsis setting
       },
     }
   end,
