@@ -22,16 +22,14 @@ return {
   },
   config = function()
     local cmp = require "cmp"
-
     local luasnip = require "luasnip"
-
     local lspkind = require "lspkind"
 
     -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
     require("luasnip.loaders.from_vscode").lazy_load()
     luasnip.config.setup {}
 
-    cmp.setup {
+    cmp.setup { -- This is the opening '{' from line 34 in the error
       snippet = {
         expand = function(args)
           luasnip.lsp_expand(args.body)
@@ -90,13 +88,14 @@ return {
         fields = { "kind", "abbr", "menu" },
 
         -- Add the indicator for expandable items (like snippets)
-        expandable_indicator = ">", -- This was correct
+        expandable_indicator = ">",
 
         -- Define the main formatting function using lspkind
         format = lspkind.cmp_format {
           mode = "symbol_text", -- Show symbol and text, popular choice
           maxwidth = 50, -- Keep your maxwidth setting
           ellipsis_char = "...", -- Keep your ellipsis setting
+        },
       },
     }
   end,
