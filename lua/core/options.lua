@@ -11,6 +11,24 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   end,
 })
 
+-- Better undo
+opt.undofile = true -- Persistent undo
+
+-- Calculate the undo directory path first
+local undodir_path = vim.fn.stdpath "data" .. "/undodir"
+
+-- Set the Neovim option using the calculated path string
+opt.undodir = undodir_path
+
+-- Now use the path string variable for filesystem checks
+-- Create the directory if it doesn't exist
+if vim.fn.isdirectory(undodir_path) == 0 then
+  -- The 'p' argument creates parent directories as needed.
+  -- The second argument to mkdir is the mode (permissions), ignored on Windows.
+  -- Using 'p' is generally safe.
+  vim.fn.mkdir(undodir_path, "p")
+end
+
 -- Line Numbers
 opt.relativenumber = true
 opt.number = true
