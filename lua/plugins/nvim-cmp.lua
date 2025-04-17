@@ -85,7 +85,8 @@ return {
       formatting = {
         -- Define the fields to display and their order
         -- Common choices: 'kind' (icon/text), 'abbr' (abbreviation), 'menu' (source info)
-        fields = { "kind", "abbr", "menu" },
+        -- fields = { "kind", "abbr", "menu" },
+        -- fields = { "" },
 
         -- Add the indicator for expandable items (like snippets)
         expandable_indicator = ">",
